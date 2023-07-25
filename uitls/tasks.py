@@ -1,0 +1,11 @@
+from __future__ import absolute_import, unicode_literals
+
+import time
+
+from celery import shared_task
+
+
+@shared_task(ignore_result=False)
+def test1(x, y):
+    time.sleep(1)
+    return x + y
